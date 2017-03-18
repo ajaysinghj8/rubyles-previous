@@ -4,20 +4,15 @@ import TransactionRow from './TransactionRow'
 class TransactionsTable extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      transactions: [
-        {
-          id: 1,
-          payee: 'Livingoods',
-          referenceNumber: 1,
-          date: '',
-          cleared: false,
-          paymentAmount: null,
-          depositAmount: 10012,
-          balance: 10013,
-        }
-      ]
-    };
+      transactions: []
+    }
+  }
+
+  componentDidMount() {
+		var that = this;
+    fetch('http://127.0.0.1:3000/transactions').then((response) => response.json().then(function(json) { that.setState(json)}));
   }
 
   render() {
