@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/kstevens715/personal-finance-app#readme",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "jquery": "^3.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
@@ -29,9 +30,13 @@
     "babel-loader": "^6.4.1",
     "babel-preset-env": "^1.2.2",
     "babel-preset-react": "^6.23.0",
+    "css-loader": "^0.27.3",
     "express": "^4.15.2",
+    "file-loader": "^0.10.1",
     "npm-run-all": "^4.0.2",
     "open": "0.0.5",
+    "style-loader": "^0.14.1",
+    "url-loader": "^0.5.8",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.17.1"
