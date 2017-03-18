@@ -22,25 +22,22 @@ class TransactionsTable extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Rubyles</h1>
-        <table className="table table-striped table-hover table-condensed">
-          <thead>
-            <tr>
-              <th>Ref #</th>
-              <th>Date</th>
-              <th>Payee</th>
-              <th>Cleared?</th>
-              <th>Payment</th>
-              <th>Deposit</th>
-              <th>Balance</th>
-            </tr>
-          </thead>
-          <tbody>
-            { this.state.transactions.map((transaction) => <TransactionRow key={transaction.id} transaction={transaction}></TransactionRow>)}
-          </tbody>
-        </table>
-    </div>
+      <table className="table table-striped table-hover table-condensed">
+        <thead>
+          <tr>
+            <th>Ref #</th>
+            <th>Date</th>
+            <th>Payee</th>
+            <th>Cleared?</th>
+            <th>Payment</th>
+            <th>Deposit</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          { this.state.transactions.map((transaction) => <TransactionRow key={transaction.id} transaction={transaction}></TransactionRow>)}
+        </tbody>
+      </table>
     );
   }
 }

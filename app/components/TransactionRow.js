@@ -14,7 +14,7 @@ class TransactionRow extends React.Component {
         <td>{ transaction.depositAmount }</td>
         <td>{ transaction.balance }</td>
       </tr>
-    )
+    );
   }
 }
 
