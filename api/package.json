@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "API for Rubyles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kstevens715/rubyles.git"
+  },
+  "author": "Kyle Stevens",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kstevens715/rubyles/issues"
+  },
+  "homepage": "https://github.com/kstevens715/rubyles#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
