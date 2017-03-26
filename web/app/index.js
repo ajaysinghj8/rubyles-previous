@@ -11,7 +11,10 @@ import Routes from './routes';
 import transactions from './reducers/transactions'
 import addTransaction from './actions/transactions'
 
-let store = createStore(transactions);
+let store = createStore(
+  transactions,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <Provider store={store}>
