@@ -1,3 +1,5 @@
+'option strict';
+
 import React from 'react';
 
 class TransactionRow extends React.Component {
