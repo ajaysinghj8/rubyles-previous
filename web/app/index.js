@@ -13,9 +13,6 @@ import addTransaction from './actions/transactions'
 
 let store = createStore(transactions);
 
-store.dispatch(addTransaction({id: 1, payee: 'Burger King', paymentAmount: 100}));
-store.dispatch(addTransaction({id: 2, payee: 'Livingoods', paymentAmount: 101}));
-
 ReactDOM.render(
   <Provider store={store}>
     <Router>

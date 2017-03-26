@@ -2,6 +2,16 @@
 
 import * as types from '../constants/ActionTypes'
 
-const addTransaction = (transaction) => ({ type: types.ADD_TRANSACTION, transaction: transaction })
+export function addTransaction(transaction) {
+  return {
+    type: types.ADD_TRANSACTION,
+    transaction: transaction
+  }
+}
 
-module.exports = addTransaction;
+export function deleteTransaction(id) {
+  return {
+    type: types.DELETE_TRANSACTION,
+    id: id
+  }
+}
