@@ -8,6 +8,7 @@ export default {
     publicPath: '/',
     filename: "bundle.js"
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       { test: /\.js$/, include: path.join(__dirname, "app"), loaders: ['babel-loader'] },
