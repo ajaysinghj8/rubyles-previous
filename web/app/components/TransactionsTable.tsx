@@ -1,12 +1,9 @@
 'option strict';
 
-import React from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import * as React from 'react'
 import TransactionRow from './TransactionRow'
-import * as TransactionActions from '../actions/transactions'
 
-function TransactionsTableComponent({ transactions, actions }) {
+export default function TransactionsTableComponent({ transactions }: any, props: any) {
   return (
     <table className="table table-striped table-hover table-condensed">
       <thead>
@@ -21,7 +18,7 @@ function TransactionsTableComponent({ transactions, actions }) {
         </tr>
       </thead>
       <tbody>
-        { transactions.map((transaction) =>
+        { transactions.map((transaction: any) =>
           <TransactionRow
             key={transaction.id}
             transaction={transaction}
@@ -32,20 +29,3 @@ function TransactionsTableComponent({ transactions, actions }) {
     </table>
   );
 }
-
-function mapStateToProps(state) {
-  return {
-    transactions: state.transactions
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(TransactionActions, dispatch)
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TransactionsTableComponent);

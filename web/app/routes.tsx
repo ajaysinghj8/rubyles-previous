@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Route } from 'react-router-dom'
 
 import TransactionForm from './components/TransactionForm';
@@ -14,4 +14,4 @@ var Routes = function() {
   );
 }
 
-module.exports = Routes;
+export default Routes;

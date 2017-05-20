@@ -1,8 +1,11 @@
-import express from 'express';
-import webpack from 'webpack';
-import path from 'path';
+import * as express from 'express';
+import path = require('path');
 import config from '../webpack.config';
-import open from 'open';
+import open = require('open');
+
+//import { webpack } from 'webpack';
+//import webpack = require('webpack');
+import * as webpack from 'webpack';
 
 /* eslint-disable no-console */
 
@@ -21,7 +24,7 @@ app.get('*', function(req, res) {
   res.sendFile(path.join( __dirname, '../app/index.html'));
 });
 
-app.listen(port, function(err) {
+app.listen(port, function(err: any) {
   if (err) {
     console.log(err);
   } else {

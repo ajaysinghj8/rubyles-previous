@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import { Link, NavLink } from 'react-router-dom'
 
-class Navbar extends React.Component {
+export default class Navbar extends React.Component<undefined, undefined> {
   render() {
     return (
       <nav className="navbar navbar-inverse">
@@ -21,5 +21,3 @@ class Navbar extends React.Component {
     );
   }
 }
-
-module.exports = Navbar;

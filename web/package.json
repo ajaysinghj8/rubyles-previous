@@ -6,7 +6,7 @@
   "scripts": {
     "teststart": "webpack --progress --profile --colors --display-error-details --display-cached",
     "start": "npm-run-all --parallel open:src",
-    "open:src": "babel-node tools/appServer.js",
+    "open:src": "ts-node tools/appServer.tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,27 +20,30 @@
   },
   "homepage": "https://github.com/kstevens715/personal-finance-app#readme",
   "dependencies": {
+    "@types/express": "^4.0.35",
+    "@types/react": "^15.0.24",
+    "@types/react-dom": "^15.5.0",
+    "@types/react-router-dom": "^4.0.4",
+    "@types/webpack": "^2.2.15",
     "bootstrap": "^3.3.7",
     "jquery": "^3.2.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-redux": "^5.0.3",
-    "react-router-dom": "^4.0.0",
-    "redux": "^3.6.0"
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-loader": "^6.4.1",
-    "babel-preset-env": "^1.2.2",
-    "babel-preset-react": "^6.23.0",
+    "awesome-typescript-loader": "^3.1.3",
     "css-loader": "^0.27.3",
     "express": "^4.15.2",
     "file-loader": "^0.10.1",
     "npm-run-all": "^4.0.2",
     "open": "0.0.5",
+    "source-map-loader": "^0.2.1",
     "style-loader": "^0.14.1",
+    "ts-node": "^3.0.4",
+    "typescript": "^2.3.2",
     "url-loader": "^0.5.8",
-    "webpack": "^2.2.1",
+    "webpack": "^2.2.15",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.17.1"
   }

@@ -1,8 +1,8 @@
 'option strict';
 
-import React from 'react';
+import * as React from 'react';
 
-function TransactionRow(props) {
+export default function TransactionRow(props: any) {
   var transaction = props.transaction;
   var deleteTransaction = props.deleteTransaction;
 
@@ -21,5 +21,3 @@ function TransactionRow(props) {
     </tr>
   );
 }
-
-module.exports = TransactionRow;
