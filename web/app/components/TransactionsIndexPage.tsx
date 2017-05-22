@@ -4,11 +4,7 @@ import * as React from 'react'
 import { Transaction } from '../models/transaction'
 import { TransactionsTable } from './TransactionsTable'
 
-export interface ITransactionsIndexPageState {
-  transactions: Transaction[]
-}
-
-export class TransactionsIndexPage extends React.Component<{}, ITransactionsIndexPageState> {
+export class TransactionsIndexPage extends React.Component<any, any> {
   constructor(props : {}) {
     super(props)
     this.state = {
