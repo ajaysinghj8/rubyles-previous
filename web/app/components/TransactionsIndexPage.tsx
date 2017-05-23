@@ -13,11 +13,11 @@ export class TransactionsIndexPage extends React.Component<any, any> {
   }
 
   componentDidMount() {
-    let transactions : Transaction[] = [
-      { id: 1, payee: "Livingoods" }
-    ];
-
-    this.setState({ transactions });
+    fetch("http://127.0.0.1:3000/transactions").then((response) => {
+      return response.json();
+    }).then((data) => {
+      this.setState({ transactions: data.transactions });
+    });
   }
 
   render() {
