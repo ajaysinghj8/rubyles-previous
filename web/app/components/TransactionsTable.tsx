@@ -11,7 +11,7 @@ export interface ITransactionsTableProps {
 export class TransactionsTable extends React.Component<ITransactionsTableProps, {}> {
   render() {
     return (
-      <table className="table table-striped table-hover table-condensed">
+      <table>
         <thead>
           <tr>
             <th>Ref #</th>

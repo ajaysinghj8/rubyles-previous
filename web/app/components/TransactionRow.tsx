@@ -16,7 +16,7 @@ export default function TransactionRow(props: any) {
       <td>{ transaction.depositAmount }</td>
       <td>{ transaction.balance }</td>
       <td>
-        <button className="btn-danger" onClick={() => deleteTransaction(transaction.id)}>Destroy</button>
+        <button onClick={() => deleteTransaction(transaction.id)}>Destroy</button>
       </td>
     </tr>
   );
