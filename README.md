@@ -15,7 +15,7 @@ At the moment, the API is not actually used by the frontend. But here's the comm
 
 ```
 cd api
-node index.js
+npm start
 ```
 
 After starting it, you can see the returned JSON here: http://127.0.0.1:3000/transactions

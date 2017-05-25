@@ -1,0 +1,24 @@
+version: "2"
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    command: npm start
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+  db:
+    image: postgres:9.5
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=uname
+      - POSTGRES_PASSWORD=pw
+      - POSTGRES_DB=rubyles
+    ports:
+      - "5432:5432"
+volumes:
+  db-data:
+    driver: local
