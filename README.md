@@ -1,21 +1,11 @@
 # Rubyles
 
 ## Running Locally
-
-### Web / Front-end
-The following command will startup the front-end and automaticaly open the homepage in the browser:
+As long as Docker and Docker Compose are already setup, all you have to do is:
 
 ```
-cd web
-npm start
+docker-compose up
 ```
 
-### API
-At the moment, the API is not actually used by the frontend. But here's the command to start it anyway:
-
-```
-cd api
-npm start
-```
-
-After starting it, you can see the returned JSON here: http://127.0.0.1:3000/transactions
+WEB: http://127.0.0.1:3001
+API: http://127.0.0.1:8080

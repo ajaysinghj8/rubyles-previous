@@ -13,7 +13,7 @@ export class TransactionsIndexPage extends React.Component<any, any> {
   }
 
   componentDidMount() {
-    fetch("http://127.0.0.1:3000/transactions").then((response) => {
+    fetch("http://127.0.0.1:8080/transactions").then((response) => {
       return response.json();
     }).then((data) => {
       this.setState({ transactions: data.transactions });
