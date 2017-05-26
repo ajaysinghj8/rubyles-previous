@@ -1,0 +1,3 @@
+{
+  "development": "postgres://uname:pw@db/rubyles"
+}

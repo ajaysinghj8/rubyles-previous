@@ -19,5 +19,8 @@
   "homepage": "https://github.com/kstevens715/rubyles#readme",
   "dependencies": {
     "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "db-migrate-pg": "^0.1.11"
   }
 }
