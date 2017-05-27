@@ -4,7 +4,7 @@ services:
     build:
       context: ./api
       dockerfile: Dockerfile
-    command: npm start
+    command: sh -c "tail -f /dev/null"
     depends_on:
       - db
     ports:
@@ -15,7 +15,7 @@ services:
     build:
       context: ./web
       dockerfile: Dockerfile
-    command: npm start
+    command: sh -c "tail -f /dev/null"
     depends_on:
       - api
     ports:

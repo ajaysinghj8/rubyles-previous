@@ -4,7 +4,8 @@
   "description": "API for Rubyles",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "ts-node index.ts",
+    "debug": "ts-node debug index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,9 +19,13 @@
   },
   "homepage": "https://github.com/kstevens715/rubyles#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "pg": "^6.2.3",
+    "pg-pool": "^1.7.1"
   },
   "devDependencies": {
-    "db-migrate-pg": "^0.1.11"
+    "db-migrate-pg": "^0.1.11",
+    "ts-node": "^3.0.4",
+    "typescript": "^2.3.3"
   }
 }
