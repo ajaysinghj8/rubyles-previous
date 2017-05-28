@@ -1,21 +1,18 @@
 import * as express from 'express';
-import { query } from './lib/database';
+import { Transactions } from './app/models/transactions';
 
 var app = express()
 
 app.get('/transactions', function (request, response) {
-  var transactions = [];
+  response.append('Access-Control-Allow-Origin', '*');
 
-  query('SELECT "id", "payee", "referenceNumber", "date", "cleared", "paymentAmount", "depositAmount" FROM "transactions"', [], function(err, res) {
+  Transactions.All(function(err, transactions) {
     if(err) {
       return console.error('error running query', err);
     }
 
-    transactions = res.rows;
-    response.append('Access-Control-Allow-Origin', '*');
     response.json({ transactions });
   });
-
 })
 
 app.listen(8080, function () {
