@@ -1,2 +1,4 @@
 node_modules/
+api/ts-node*
+web/ts-node*
 
