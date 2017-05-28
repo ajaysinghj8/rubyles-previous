@@ -3,10 +3,10 @@ import { Transactions } from './app/models/transactions';
 
 var app = express()
 
-app.get('/transactions', function (request, response) {
+app.get('/transactions', function (request: any, response: any) {
   response.append('Access-Control-Allow-Origin', '*');
 
-  Transactions.All(function(err, transactions) {
+  Transactions.All(function(err: any, transactions: any) {
     if(err) {
       return console.error('error running query', err);
     }

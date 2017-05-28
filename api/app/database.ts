@@ -19,7 +19,7 @@ var config = {
 //and set a limit of maximum 10 idle clients
 const pool = new pg.Pool(config);
 
-pool.on('error', function (err, client) {
+pool.on('error', function (err: any, client: any) {
   // if an error is encountered by a client while it sits idle in the pool
   // the pool itself will emit an error event with both the error and
   // the client which emitted the original error
@@ -30,13 +30,13 @@ pool.on('error', function (err, client) {
 });
 
 //export the query method for passing queries to the pool
-export function query(text, values, callback) {
+export function query(text: any, values: any, callback: any) {
   console.log('query:', text, values);
   return pool.query(text, values, callback);
 };
 
 // the pool also supports checking out a client for
 // multiple operations, such as a transaction
-export function connect(callback) {
+export function connect(callback: any) {
   return pool.connect(callback);
 };

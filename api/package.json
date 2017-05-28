@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/kstevens715/rubyles#readme",
   "dependencies": {
+    "@types/express": "^4.0.35",
+    "@types/pg": "^6.1.40",
     "express": "^4.15.2",
     "pg": "^6.2.3",
     "pg-pool": "^1.7.1"
