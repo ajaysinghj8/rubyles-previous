@@ -1,6 +1,8 @@
 import * as express from 'express';
 import { Transactions } from './app/models/transactions';
 
+const API_PORT : number = 8080;
+
 var app = express()
 
 app.get('/transactions', function (request: any, response: any) {
@@ -15,6 +17,6 @@ app.get('/transactions', function (request: any, response: any) {
   });
 })
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!')
+app.listen(API_PORT, function () {
+  console.log(`Rubyles API running on port ${API_PORT}!`)
 })
