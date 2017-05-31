@@ -1,10 +1,17 @@
 import { query } from '../database';
 
 export class Transactions {
-  static All(callback: any) {
+  static create(obj: any) {
+  }
+
+  static find(callback: any) {
     var select = 'SELECT "id", "payee", "referenceNumber", "date", "cleared", "paymentAmount", "depositAmount" FROM "transactions"';
     query(select, [], function(err: any, res: any) {
-      callback.call(this, err, res.rows);
+      let transactions = [];
+      if (res) {
+        transactions = res.rows;
+      }
+      callback.call(this, err, transactions);
     });
   }
 }

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node index.ts",
     "debug": "ts-node debug index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "DATABASE_URL=postgres://uname:pw@db/rubyles_test mocha -r ts-node/register ./**/*Spec.ts",
+    "test:prepare": "DATABASE_URL=postgres://uname:pw@db/rubyles_test db-migrate up"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,11 @@
     "pg-pool": "^1.7.1"
   },
   "devDependencies": {
+    "@types/chai": "^3.5.2",
+    "@types/mocha": "^2.2.41",
+    "chai": "^4.0.0",
     "db-migrate-pg": "^0.1.11",
+    "mocha": "^3.4.2",
     "ts-node": "^3.0.4",
     "typescript": "^2.3.3"
   }

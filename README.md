@@ -18,6 +18,10 @@ INSERT INTO "transactions" ("payee", "referenceNumber", "date", "cleared", "paym
 # Start API and frontend
 docker-compose exec api npm start
 docker-compose exec web npm start
+
+# Run tests
+npm run test:prepare
+npm test
 ```
 
 WEB: http://127.0.0.1:3001

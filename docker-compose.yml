@@ -28,6 +28,7 @@ services:
     image: postgres:9.5
     volumes:
       - db-data:/var/lib/postgresql/data
+      - ./api/config/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     environment:
       - POSTGRES_USER=uname
       - POSTGRES_PASSWORD=pw
