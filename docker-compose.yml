@@ -12,7 +12,7 @@ services:
     volumes:
       - ./api:/usr/src/api
     environment:
-      - DATABASE_URL=postgres://uname:pw@db/rubyles
+      - DATABASE_URL=postgres://${PGUSER}:${PGPASSWORD}@db/${PGDATABASE}
   web:
     build:
       context: ./web
@@ -30,9 +30,9 @@ services:
       - db-data:/var/lib/postgresql/data
       - ./api/config/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     environment:
-      - POSTGRES_USER=uname
-      - POSTGRES_PASSWORD=pw
-      - POSTGRES_DB=rubyles
+      - POSTGRES_USER=${PGUSER}
+      - POSTGRES_PASSWORD=${PGPASSWORD}
+      - POSTGRES_DB=${PGDATABASE}
     ports:
       - "5432:5432"
 volumes:
