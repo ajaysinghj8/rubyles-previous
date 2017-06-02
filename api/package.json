@@ -27,7 +27,7 @@
     "pg-pool": "^1.7.1"
   },
   "devDependencies": {
-    "@types/chai": "^3.5.2",
+    "@types/chai": "^4.0.0",
     "@types/mocha": "^2.2.41",
     "chai": "^4.0.0",
     "db-migrate-pg": "^0.1.11",
