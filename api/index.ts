@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { Transactions } from './app/models/transactions';
+import * as TransactionsRepository from './lib/transactions/transactionsRepository';
 
 const API_PORT : number = 8080;
 
@@ -8,11 +8,8 @@ var app = express()
 app.get('/transactions', function (request: any, response: any) {
   response.append('Access-Control-Allow-Origin', '*');
 
-  Transactions.find(function(err: any, transactions: any) {
-    if(err) {
-      return console.error('error running query', err);
-    }
-
+  TransactionsRepository.create({payee: 'test'})
+  TransactionsRepository.find(function(transactions: any) {
     response.json({ transactions });
   });
 })
