@@ -1,13 +1,13 @@
+import Transaction from './transaction'
 import * as TransactionsRepository from './transactionsRepository';
 import { assert } from 'chai';
 import 'mocha';
-//TODO: Replace all references to 'any'
 //TODO: Decide if callback is way to go, or if should use promise or RXjs
-//TODO: Log somewhere else?
-describe('Transactions', function() {
-  describe('.find', function() {
+//TODO: Share Transaction "model" between API and web?`
+describe('TransactionsRepository', function() {
+  describe('.findAll', function() {
     it('returns an empty array when no transactions exist', function(done: any) {
-      TransactionsRepository.find(function(transactions: any) {
+      TransactionsRepository.findAll(function(transactions: Transaction[]) {
         assert.equal(transactions.length, 0);
         done();
       });
@@ -22,7 +22,7 @@ describe('Transactions', function() {
         paymentAmount: 1001,
         depositAmount: 1002,
       });
-      TransactionsRepository.find(function(transactions: any) {
+      TransactionsRepository.findAll(function(transactions: Transaction[]) {
         let transaction = transactions[0];
 
         assert.equal(transactions.length, 1);

@@ -1,9 +1,11 @@
-var transactions: any[] = [];
+import Transaction from './transaction'
 
-export function create(transaction: any) {
+var transactions: Transaction[] = [];
+
+export function create(transaction: Transaction): void {
   transactions.push(transaction);
 }
 
-export function find(callback: any) {
+export function findAll(callback: any): void {
   callback.call(this, transactions);
 }
