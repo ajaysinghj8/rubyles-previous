@@ -1,20 +1,14 @@
 import * as express from 'express';
+import transactionsIndex from './lib/transactions/transactionsController';
 import * as TransactionsRepository from './lib/transactions/transactionsRepository';
-import Transaction from './lib/transactions/transaction'
 
 const API_PORT : number = 8080;
 
 var app = express()
 
-app.get('/transactions', function (request: any, response: any) {
-  response.append('Access-Control-Allow-Origin', '*');
-
-  TransactionsRepository.create({payee: 'test'})
-  TransactionsRepository.findAll(function(transactions: Transaction[]) {
-    response.json({ transactions });
-  });
-})
+app.get('/transactions', transactionsIndex);
 
 app.listen(API_PORT, function () {
+  TransactionsRepository.create({payee: 'test'})
   console.log(`Rubyles API running on port ${API_PORT}!`)
 })
