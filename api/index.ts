@@ -6,7 +6,21 @@ const API_PORT : number = 8080;
 
 var app = express()
 
-app.get('/transactions', transactionsIndex);
+function addAccessHeaders(req: any, res: any, next: any) {
+  res.append('Access-Control-Allow-Origin', '*');
+  next();
+}
+
+function asJson(action: any) {
+  return function(req: any, res: any) {
+    action(TransactionsRepository, function(data: any) {
+      res.json(data);
+    });
+  }
+}
+
+app.use(addAccessHeaders);
+app.get('/transactions', asJson(transactionsIndex));
 
 app.listen(API_PORT, function () {
   TransactionsRepository.create({payee: 'test'})

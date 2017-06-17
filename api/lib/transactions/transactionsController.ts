@@ -11,10 +11,8 @@ interface RubylesRepo {
   findAll(callback: any): void
 }
 
-export default function transactionsIndex(request: any, response: JsonResponse, repository: RubylesRepo) {
-  response.append('Access-Control-Allow-Origin', '*');
-
+export default function transactionsIndex(repository: RubylesRepo, callback: any): void {
   repository.findAll(function(transactions: Transaction[]) {
-    response.json({ transactions });
+    callback({ transactions });
   });
 }
