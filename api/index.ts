@@ -1,10 +1,10 @@
 import * as express from 'express';
-import transactionsIndex from './lib/transactions/transactionsController';
-import * as TransactionsRepository from './lib/transactions/transactionsRepository';
+import showAllTransactions from './lib/transactions/transactionsInteractor';
+import * as TransactionsGateway from './lib/transactions/transactionsGateway';
 
 const API_PORT : number = 8080;
 
-var app = express()
+let app = express();
 
 function addAccessHeaders(req: any, res: any, next: any) {
   res.append('Access-Control-Allow-Origin', '*');
@@ -13,16 +13,16 @@ function addAccessHeaders(req: any, res: any, next: any) {
 
 function asJson(action: any) {
   return function(req: any, res: any) {
-    action(TransactionsRepository, function(data: any) {
+    action(function(data: any) {
       res.json(data);
     });
   }
 }
 
 app.use(addAccessHeaders);
-app.get('/transactions', asJson(transactionsIndex));
+app.get('/transactions', asJson(showAllTransactions));
 
 app.listen(API_PORT, function () {
-  TransactionsRepository.create({payee: 'test'})
+  TransactionsGateway.create({payee: 'test'})
   console.log(`Rubyles API running on port ${API_PORT}!`)
 })
