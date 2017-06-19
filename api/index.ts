@@ -1,6 +1,7 @@
 import * as express from 'express';
 import showAllTransactions from './lib/transactions/transactionsInteractor';
 import * as TransactionsGateway from './lib/transactions/transactionsGateway';
+import Transaction from './lib/transactions/transaction';
 
 const API_PORT : number = 8080;
 
@@ -11,16 +12,13 @@ function addAccessHeaders(req: any, res: any, next: any) {
   next();
 }
 
-function asJson(action: any) {
-  return function(req: any, res: any) {
-    action(function(data: any) {
-      res.json(data);
-    });
-  }
-}
-
 app.use(addAccessHeaders);
-app.get('/transactions', asJson(showAllTransactions));
+
+app.get('/transactions', function(req: any, res: any) {
+  showAllTransactions(function(transactions: Transaction[]) {
+    res.json({ transactions });
+  });
+});
 
 app.listen(API_PORT, function () {
   TransactionsGateway.create({payee: 'test'})

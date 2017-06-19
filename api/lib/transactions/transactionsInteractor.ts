@@ -5,9 +5,11 @@ interface EntityGateway {
   findAll(callback: any): void
 }
 
-function showAllTransactions(callback: any, repository: EntityGateway = TransactionsGateway): void {
+type TransactionsCallback = (transactions: Transaction[]) => void;
+
+function showAllTransactions(callback: TransactionsCallback, repository: EntityGateway = TransactionsGateway): void {
   repository.findAll(function(transactions: Transaction[]) {
-    callback({ transactions });
+    callback(transactions);
   });
 }
 

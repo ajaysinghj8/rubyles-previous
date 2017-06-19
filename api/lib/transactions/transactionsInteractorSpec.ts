@@ -10,8 +10,8 @@ describe('TransactionsInteractor', function() {
       let transaction = { payee: 'test' };
       mockRepo.items.push(transaction);
 
-      showAllTransactions(function(transactions: any) {
-        assert.deepEqual(transactions, { transactions: [transaction] });
+      showAllTransactions(function(transactions: Transaction[]) {
+        assert.deepEqual(transactions, [transaction]);
         done();
       }, mockRepo);
     });
