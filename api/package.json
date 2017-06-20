@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node index.ts",
     "debug": "ts-node debug index.ts",
-    "test": "mocha -r ts-node/register ./**/*Spec.ts"
+    "test": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -23,11 +23,22 @@
     "express": "^4.15.2"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.0",
-    "@types/mocha": "^2.2.41",
-    "chai": "^4.0.0",
-    "mocha": "^3.4.2",
+    "@types/jest": "^20.0.1",
+    "jest": "^20.0.4",
+    "ts-jest": "^20.0.6",
     "ts-node": "^3.0.4",
     "typescript": "^2.3.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
   }
 }

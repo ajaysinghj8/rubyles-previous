@@ -1,7 +1,5 @@
 import showAllTransactions from './transactionsInteractor';
 import Transaction from './transaction';
-import { assert } from 'chai';
-import 'mocha';
 import mockRepo from '../specHelpers/mockRepo';
 
 describe('TransactionsInteractor', function() {
@@ -11,7 +9,7 @@ describe('TransactionsInteractor', function() {
       mockRepo.items.push(transaction);
 
       showAllTransactions(function(transactions: Transaction[]) {
-        assert.deepEqual(transactions, [transaction]);
+        expect(transactions).toEqual([transaction]);
         done();
       }, mockRepo);
     });

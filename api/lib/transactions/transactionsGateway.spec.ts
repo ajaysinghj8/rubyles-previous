@@ -1,14 +1,12 @@
 import Transaction from './transaction'
 import * as TransactionsGateway from './transactionsGateway';
-import { assert } from 'chai';
-import 'mocha';
 //TODO: Decide if callback is way to go, or if should use promise or RXjs
 //TODO: Share Transaction "model" between API and web?`
 describe('TransactionsGateway', function() {
   describe('.findAll', function() {
     it('returns an empty array when no transactions exist', function(done: any) {
       TransactionsGateway.findAll(function(transactions: Transaction[]) {
-        assert.equal(transactions.length, 0);
+        expect(transactions).toHaveLength(0);
         done();
       });
     });
@@ -26,13 +24,13 @@ describe('TransactionsGateway', function() {
       TransactionsGateway.findAll(function(transactions: Transaction[]) {
         let transaction = transactions[0];
 
-        assert.equal(transactions.length, 1);
-        assert.equal(transaction.payee, 'Butcher Block');
-        assert.equal(transaction.referenceNumber, '1234');
-        assert.equal(transaction.date.toUTCString(), new Date('2017-06-01').toUTCString());
-        assert.equal(transaction.paymentAmount, 1001);
-        assert.equal(transaction.depositAmount, 1002);
-        assert.isTrue(transaction.cleared);
+        expect(transactions).toHaveLength(1);
+        expect(transaction.payee).toEqual('Butcher Block');
+        expect(transaction.referenceNumber).toEqual('1234');
+        expect(transaction.date.toUTCString()).toEqual(new Date('2017-06-01').toUTCString());
+        expect(transaction.paymentAmount).toEqual(1001);
+        expect(transaction.depositAmount).toEqual(1002);
+        expect(transaction.cleared).toBeTruthy;
         done();
       });
     });
