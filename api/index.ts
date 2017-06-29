@@ -21,6 +21,6 @@ app.get('/transactions', function(req: any, res: any) {
 });
 
 app.listen(API_PORT, function () {
-  TransactionsGateway.create({payee: 'test'})
+  TransactionsGateway.create({payee: 'test', cleared: true})
   console.log(`Rubyles API running on port ${API_PORT}!`)
 })
