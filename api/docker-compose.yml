@@ -1,5 +1,0 @@
-web:
- build: .
- command: puma
- ports:
-   - “9292:9292”
